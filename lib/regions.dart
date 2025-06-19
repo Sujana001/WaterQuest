@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:waterquest_mvp/regions.dart';
+import 'package:waterquest_mvp/mission.dart';
 
-class WorldMap extends StatefulWidget {
-  const WorldMap({super.key});
+class Regions extends StatefulWidget {
+  const Regions({super.key});
 
   @override
-  State<WorldMap> createState() => _WorldMapState();
+  State<Regions> createState() => _RegionsState();
 }
 
-class _WorldMapState extends State<WorldMap> {
+class _RegionsState extends State<Regions> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +19,7 @@ class _WorldMapState extends State<WorldMap> {
           padding: EdgeInsets.all(150),
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('images/p2.jpg'),
+              image: AssetImage('images/p3.jpg'),
               fit: BoxFit.cover,
             ),
           ),
@@ -30,10 +30,10 @@ class _WorldMapState extends State<WorldMap> {
                 press: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: ((context) => const Regions())),
+                    MaterialPageRoute(builder: ((context) => const Mission())),
                   );
                 },
-                title: "Bangladesh",
+                title: "Dhaka",
               ),
             ],
           ),
@@ -53,11 +53,11 @@ class Button extends StatelessWidget {
     return GestureDetector(
       onTap: press,
       child: Container(
-        height: 60,
-        width: 1000,
+        height: 150,
+        width: 100,
         decoration: BoxDecoration(
           shape: BoxShape.rectangle,
-          borderRadius: BorderRadius.circular(40),
+          borderRadius: BorderRadius.circular(50),
           color: Color.fromARGB(0, 0, 0, 0),
         ),
         child: Center(

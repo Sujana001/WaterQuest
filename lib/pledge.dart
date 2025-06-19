@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:waterquest_mvp/regions.dart';
+import 'package:waterquest_mvp/score.dart';
 
-class WorldMap extends StatefulWidget {
-  const WorldMap({super.key});
+class Pledge extends StatefulWidget {
+  const Pledge({super.key});
 
   @override
-  State<WorldMap> createState() => _WorldMapState();
+  State<Pledge> createState() => _PledgeState();
 }
 
-class _WorldMapState extends State<WorldMap> {
+class _PledgeState extends State<Pledge> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,21 +19,23 @@ class _WorldMapState extends State<WorldMap> {
           padding: EdgeInsets.all(150),
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('images/p2.jpg'),
+              image: AssetImage('images/p7.jpg'),
               fit: BoxFit.cover,
             ),
           ),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Button(
                 press: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: ((context) => const Regions())),
+                    MaterialPageRoute(
+                      builder: ((context) => const Score(score: 60)),
+                    ),
                   );
                 },
-                title: "Bangladesh",
+                title: "Next",
               ),
             ],
           ),
@@ -53,12 +55,12 @@ class Button extends StatelessWidget {
     return GestureDetector(
       onTap: press,
       child: Container(
-        height: 60,
-        width: 1000,
+        height: 50,
+        width: 3000,
         decoration: BoxDecoration(
           shape: BoxShape.rectangle,
-          borderRadius: BorderRadius.circular(40),
-          color: Color.fromARGB(0, 0, 0, 0),
+          borderRadius: BorderRadius.circular(50),
+          color: Colors.white,
         ),
         child: Center(
           child: Text(
