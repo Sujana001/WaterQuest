@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:waterquest_mvp/pledge.dart';
 
 class Score extends StatelessWidget {
   final int score;
@@ -9,7 +10,7 @@ class Score extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Your Final Score'),
+        title: Text('Your Quizz Score'),
         backgroundColor: const Color.fromARGB(255, 14, 223, 251),
       ),
       body: Center(
@@ -44,9 +45,12 @@ class Score extends StatelessWidget {
               SizedBox(height: 30),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.popUntil(context, (route) => route.isFirst);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const Pledge()),
+                  );
                 },
-                child: Text('Back'),
+                child: Text('Next'),
               ),
             ],
           ),

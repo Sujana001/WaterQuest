@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:waterquest_mvp/score.dart';
+import 'package:waterquest_mvp/home.dart';
 
 class Pledge extends StatefulWidget {
   const Pledge({super.key});
@@ -30,12 +30,10 @@ class _PledgeState extends State<Pledge> {
                 press: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(
-                      builder: ((context) => const Score(score: 60)),
-                    ),
+                    MaterialPageRoute(builder: ((context) => const Home())),
                   );
                 },
-                title: "Next",
+                title: "Back",
               ),
             ],
           ),

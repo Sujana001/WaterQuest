@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:waterquest_mvp/pledge.dart';
+import 'package:waterquest_mvp/score.dart';
 
 class Quizzes extends StatefulWidget {
   const Quizzes({super.key});
@@ -56,7 +56,7 @@ class _QuizzesState extends State<Quizzes> {
       // Go to pledge screen with score
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => Pledge()),
+        MaterialPageRoute(builder: (context) => Score(score: score2)),
       );
     }
   }
@@ -84,8 +84,6 @@ class _QuizzesState extends State<Quizzes> {
           ),
           child: Column(
             children: [
-              Text('Points: $score2', style: TextStyle(fontSize: 15)),
-              SizedBox(height: 20),
               Text(
                 'Q${currentQuestion + 1}. ${question['question']}',
                 style: TextStyle(fontSize: 15),
